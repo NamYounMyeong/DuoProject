@@ -14,7 +14,7 @@
 			<input type="text" name="memberPw" placeholder="비밀번호">
 		</div>
 		<div>
-			<button type="button">로그인</button>
+			<button type="button" class="login-btn">로그인</button>
 		</div>
 	</form>
 	<p>
@@ -32,7 +32,23 @@
 
 <script type="text/javascript">
 	$(function(){
-		
+		$('.login-btn').click(function(){
+			var memberId = $('[name=memberId]').val();
+			var memberPw = $('[name=memberPw]').val();
+			var loginInfo = {
+				memberId : memberId,
+				memberPw : memberPw
+			};
+			$.ajax({
+				url: '${pageContext.request.contextPath}/rest/member',
+				method: 'post',
+				contentType: 'application/json',
+				data: JSON.stringify(loginInfo),
+				success: function(resp){
+					console.log(resp);
+				}
+			});
+		});
 	});
 </script>
 
