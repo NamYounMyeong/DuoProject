@@ -1,13 +1,13 @@
-package com.kh.merrywe;
+package com.kh.sdm;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class MerryWeApplication {
+public class SDMApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(MerryWeApplication.class, args);
+		SpringApplication.run(SDMApplication.class, args);
 	}
 
 }
