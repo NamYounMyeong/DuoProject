@@ -1,10 +1,10 @@
-package com.kh.merrywe;
+package com.kh.sdm;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class MerryWeApplicationTests {
+class SDMApplicationTests {
 
 	@Test
 	void contextLoads() {
