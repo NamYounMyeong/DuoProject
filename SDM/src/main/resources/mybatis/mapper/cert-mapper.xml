@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="cert">
+
+	<!-- 인증번호 등록 -->
+	<insert id="insert" parameterType="CertDto">
+		insert into cert(cert_id, cert_serial)
+		values(#{certId}, #{certSerial})
+	</insert>
+	
+	<delete id="delete" parameterType="String">
+		delete cert where cert_id = #{certId}
+	</delete>
+	
+	<!-- 인증번호 검사 -->
+	<select id="check" parameterType="CertDto" resultType="CertDto">
+		select * from cert where cert_id = #{certId} and cert_serial = #{certSerial} 
+		and cert_time >= sysdate - 20/24/60 <!-- 5분 -->
+	</select>
+	
+	
+</mapper>
