@@ -26,8 +26,6 @@ public class MemberRestController {
 	@PostMapping("/member")
 	public String login(@RequestBody MemberDto memberDto) {
 		String findPw = memberDao.findPw(memberDto.getMemberId());
-//		이거 어케 쓰더라
-//		log.debug("findPw = {}",findPw);
 		return "YYYY";
 	}
 }

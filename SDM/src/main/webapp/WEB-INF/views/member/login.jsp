@@ -25,13 +25,14 @@
 	</div>
 	<div>
 		<a href="join">회원가입</a>
-		<a href="pw-search">아이디/비밀번호 찾기</a>
+		<a href="pw-search">비밀번호 찾기</a>
 	</div>
 </div>
 
 
 <script type="text/javascript">
 	$(function(){
+		/* 로그인 시 비동기 정보 비교 */
 		$('.login-btn').click(function(){
 			var memberId = $('[name=memberId]').val();
 			var memberPw = $('[name=memberPw]').val();
@@ -45,7 +46,6 @@
 				contentType: 'application/json',
 				data: JSON.stringify(loginInfo),
 				success: function(resp){
-					console.log(resp);
 				}
 			});
 		});
