@@ -14,7 +14,7 @@
 		</div>
 		<div>
 			<input type="text" name="memberId" placeholder="이메일">
-			<button type="button">인증</button>
+			<button class="request-btn" type="button">인증번호 요청</button>
 		</div>
 		<div>
 			<input type="text" placeholder="인증번호">
@@ -62,5 +62,26 @@
 		<a href="login">로그인 하기</a>
 	</div>
 </div>
+
+
+<script type="text/javascript">
+	$(function(){
+		$(".request-btn").click(function(){
+			
+			var inputId = $("[name=memberId]").val();
+			
+			if(inputId.length == 0) return;
+			
+			$.ajax({
+				url: "${pageContext.request.contextPath}/rest/member/send-email",
+				method: "post",
+				data: {memberId:inputId},
+				success: function(){
+					console.log("메일 전송 완료");
+				}
+			});//ajax end
+		});//.request-btn click end
+	});
+</script>
 
 <jsp:include page="/WEB-INF/views/template/footer.jsp"></jsp:include>
