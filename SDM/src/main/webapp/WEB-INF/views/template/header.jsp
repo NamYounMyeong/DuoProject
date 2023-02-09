@@ -4,6 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link href="${pageContext.request.contextPath}/image/diamond.png" rel="shortcut icon" type="image/x-icon">
 <title>Mærry We</title>
 
 <!-- jQuery -->

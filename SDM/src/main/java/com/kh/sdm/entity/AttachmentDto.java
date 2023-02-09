@@ -8,8 +8,10 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data @AllArgsConstructor @NoArgsConstructor @Builder
-public class MemberDto {
-	private String memberId, memberNick, memberPw, memberPhone, memberGender;
+public class AttachmentDto {
 	private int attachmentNo;
-	private Date memberBirth, memberDueDate, memberJoin, memberLogin;
+	private String attachmentName;
+	private String attachmentType;
+	private Long attachmentSize;
+	private Date attachmentDate;
 }
