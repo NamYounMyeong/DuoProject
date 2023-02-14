@@ -6,4 +6,11 @@
 	<select id="findPw" resultType="String" parameterType="String">
 		select member_pw from member where member_id=#{memberId}
 	</select>
+	
+	<!-- 회원가입 -->
+	<insert id="join" parameterType="memberDto">
+		insert into member(member_id, member_nick, member_pw, member_birth, member_phone, member_due_date, member_gender) 
+		values(#{memberId}, #{memberNick}, #{memberPw}, #{memberBirth}, #{memberPhone}, #{memberDueDate}, #{memberGender})
+	</insert>
+	
 </mapper>
