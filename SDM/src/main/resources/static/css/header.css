@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+.nav {
+	width: 100%;
+	height: 80px;
+	padding: 10px 30px;
+	border-bottom: 1px solid #f6f6f6;
+	position: fixed;
+	left: 0;
+	top: 0;
+	background-color: white;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.logo-box {
+	display: flex;
+	align-items: center;
+}
+
+.logo-box img:nth-child(1) {
+	width: 60px;
+	height: 60px;
+}
+
+.logo-box img:nth-child(2) {
+	width: 150px;
+	height: 50px;
+	/* 3:1 비율로 설정해야 글자가 멀쩡해 보임 */
+}
