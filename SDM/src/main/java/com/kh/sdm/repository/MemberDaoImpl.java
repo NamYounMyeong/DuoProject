@@ -37,5 +37,17 @@ public class MemberDaoImpl implements MemberDao{
 		
 	}
 	
+	//닉네임 중복 확인
+	@Override
+	public MemberDto checkNick(String memberNick) {
+		return sqlSession.selectOne("member.checkNick", memberNick);
+	}
+	
+	//휴대폰번호 중복 확인
+	@Override
+	public MemberDto checkPhoneNumber(String memberPhone) {
+		return sqlSession.selectOne("member.checkPhoneNumber", memberPhone);
+	}
+	
 	
 }

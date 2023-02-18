@@ -25,6 +25,11 @@
 <!-- 배포 시 min 버전으로 -->
 <!-- <script src="//code.jquery.com/jquery-3.6.1.min.js"></script> -->
 
+<!-- 상대 경로 설정을 위한 변수 선언 -->
+<script>
+	var root = "${pageContext.request.contextPath}";
+</script>
+
 <style type="text/css">
 	
 </style>
