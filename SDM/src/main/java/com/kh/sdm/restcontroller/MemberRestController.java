@@ -21,7 +21,7 @@ import lombok.extern.slf4j.Slf4j;
 @RestController
 @Tag(name = "회원 컨트롤러")
 @CrossOrigin(origins = "http://127.0.0.1:5500")
-@RequestMapping("/rest")
+@RequestMapping("/rest/member")
 @Slf4j
 public class MemberRestController {
 	
@@ -53,6 +53,42 @@ public class MemberRestController {
 		else {
 			return "N";
 		}//else end
+	}
+	
+	//이메일 중복 확인
+	@PostMapping("/check-id")
+	public String checkId(@RequestParam String memberId) {
+		MemberDto memberDto = memberDao.checkId(memberId);
+		if(memberDto != null) {
+			return "Y";
+		}
+		else {
+			return "N";
+		}
+	}
+	
+	//닉네임 중복 확인
+	@PostMapping("check-nick")
+	public String checkNick(@RequestParam String memberNick) {
+		MemberDto memberDto = memberDao.checkNick(memberNick);
+		if(memberDto != null) {
+			return "Y";
+		}
+		else {
+			return "N";
+		}
+	}
+	
+	//휴대폰번호 중복 확인
+	@PostMapping("check-phone")
+	public String checkPhone(@RequestParam String memberPhone) {
+		MemberDto memberDto = memberDao.checkPhoneNumber(memberPhone);
+		if(memberDto != null) {
+			return "Y";
+		}
+		else {
+			return "N";
+		}
 	}
 	
 	
