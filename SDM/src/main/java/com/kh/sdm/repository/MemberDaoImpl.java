@@ -30,4 +30,12 @@ public class MemberDaoImpl implements MemberDao{
 		sqlSession.insert("member.join", memberDto);
 	}
 	
+	//아이디 중복 확인
+	@Override
+	public MemberDto checkId(String memberId) {
+		return sqlSession.selectOne("member.checkId", memberId);
+		
+	}
+	
+	
 }

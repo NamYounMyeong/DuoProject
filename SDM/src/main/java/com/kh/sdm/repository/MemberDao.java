@@ -8,4 +8,7 @@ public interface MemberDao {
 	//회원가입
 	void join(MemberDto memberDto);
 	
+	//아이디 중복 확인
+	MemberDto checkId(String memberId);
+	
 }

@@ -13,4 +13,9 @@
 		values(#{memberId}, #{memberNick}, #{memberPw}, #{memberBirth}, #{memberPhone}, #{memberDueDate}, #{memberGender})
 	</insert>
 	
+	<!-- 이메일 중복 확인 -->
+	<select id="checkId" resultType="MemberDto" parameterType="String">
+		select * from member where member_id = #{memberId}
+	</select>
+	
 </mapper>

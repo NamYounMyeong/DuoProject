@@ -55,5 +55,17 @@ public class MemberRestController {
 		}//else end
 	}
 	
+	//이메일 중복 확인
+	@PostMapping("/check-id")
+	public String checkId(@RequestParam String memberId) {
+		MemberDto memberDto = memberDao.checkId(memberId);
+		if(memberDto != null) {
+			return "Y";
+		}
+		else {
+			return "N";
+		}
+	}
+	
 	
 }
