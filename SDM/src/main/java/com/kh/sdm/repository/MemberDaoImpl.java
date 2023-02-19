@@ -12,7 +12,7 @@ public class MemberDaoImpl implements MemberDao{
 
 	@Override
 	public String findPw(String memberId) {
-		return sqlSession.selectOne("findPw", memberId);
+		return sqlSession.selectOne("member.findPw", memberId);
 	}
 	
 }

@@ -14,17 +14,17 @@ public class AttachmentDaoImpl implements AttachmentDao {
 	
 	@Override
 	public int sequence() {
-		return 0;
+		return session.selectOne("attachment.sequence");
 	}
 
 	@Override
 	public void insert(AttachmentDto attachmentDto) {
-		
+		session.insert("attachment.insert", attachmentDto);
 	}
 
 	@Override
 	public AttachmentDto find(int attachmentNo) {
-		return null;
+		return session.selectOne("attachment.find", attachmentNo);
 	}
 
 }
